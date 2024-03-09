@@ -7,7 +7,8 @@
               the implementation of object-orientation
  */
 package simpleenrollment;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class dbconnect {
 

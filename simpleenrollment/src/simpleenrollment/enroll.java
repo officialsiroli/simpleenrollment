@@ -1,6 +1,7 @@
 package simpleenrollment;
-import java.sql.*;
-import java.util.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
 
 public class enroll {
 	
@@ -100,6 +101,17 @@ public class enroll {
 				noerror=false;
 			}
 		}
+	}
+	
+	public int function() {
+		int 	enrollselection = 0;
+		Scanner sc 				= new Scanner(System.in);
+		
+		getStudent();
+		if (noerror) enrollCourse();
+		System.out.println("[0]-Enroll Again [1]-Exit Enrollment");
+		enrollselection = sc.nextInt();
+		return enrollselection;
 	}
 
 	public static void main(String[] args) {

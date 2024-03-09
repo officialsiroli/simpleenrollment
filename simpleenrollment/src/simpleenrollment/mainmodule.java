@@ -1,5 +1,5 @@
 package simpleenrollment;
-import java.util.*;
+import java.util.Scanner;
 
 public class mainmodule {
 
@@ -26,26 +26,10 @@ public class mainmodule {
 				while (s.function() != 5) {};
 			} else if (selection==2) {
 				enroll e = new enroll();
-				int enrollselection = 0;
-				if (e.noerror) {
-					while (enrollselection != 1) {
-						e.getStudent();
-						if (e.noerror) {
-							e.enrollCourse();
-						}
-						System.out.println("[0]-Enroll Again [1]-Exit Enrollment");
-						enrollselection = sc.nextInt();
-					}
-				} 
+				while (e.function() != 1) {}; 
 			} else if (selection==3) {
 				report_01 r = new report_01();
-				int reportselection = 0;
-				System.out.println("Running Report Generator");
-				while (reportselection != 1) {
-					r.generate();
-					System.out.println("[0]-Generate Again [1]-Exit Report Generation");
-					reportselection = sc.nextInt();
-				}
+				while (r.function() != 1) {};
 			} else if (selection==4) {
 				System.out.println("Application is terminated");
 			}
