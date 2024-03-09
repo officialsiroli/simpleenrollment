@@ -13,8 +13,9 @@
               the implementation of object-orientation
  */
 package simpleenrollment;
-import java.util.*;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
 
 public class students {
 

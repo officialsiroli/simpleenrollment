@@ -107,6 +107,17 @@ public class report_01 {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public int function() {
+		int reportselection = 0;
+		Scanner sc 			= new Scanner(System.in);
+
+		System.out.println("Running Report Generator");
+		generate();
+		System.out.println("[0]-Generate Again [1]-Exit Report Generation");
+		reportselection = sc.nextInt();
+		return reportselection;
+	}
 
 	public static void main(String[] args) {
 		report_01 r = new report_01();
