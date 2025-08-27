@@ -1,0 +1,19 @@
+{
+  "name": "parking-tracker",
+  "version": "1.0.0",
+  "description": "Simple app to register vehicles and track parking durations",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "parking",
+    "vehicles",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

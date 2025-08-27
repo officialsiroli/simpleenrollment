@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parking Tracker</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Parking Tracker</h1>
+  </header>
+  <main>
+    <section class="card">
+      <h2>Register Entry</h2>
+      <form id="enter-form">
+        <div class="grid">
+          <label>
+            Plate
+            <input id="plate" name="plate" placeholder="ABC-123" required maxlength="32" />
+          </label>
+          <label>
+            Make
+            <input id="make" name="make" placeholder="Toyota" />
+          </label>
+          <label>
+            Model
+            <input id="model" name="model" placeholder="Corolla" />
+          </label>
+          <label>
+            Color
+            <input id="color" name="color" placeholder="Blue" />
+          </label>
+        </div>
+        <button type="submit">Enter</button>
+        <span id="enter-status" class="status" aria-live="polite"></span>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Active Vehicles</h2>
+        <button id="refresh-active" title="Refresh active list">Refresh</button>
+      </div>
+      <div class="table-wrap">
+        <table id="active-table">
+          <thead>
+            <tr>
+              <th>Plate</th>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Color</th>
+              <th>Since</th>
+              <th>Duration</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Recent History</h2>
+        <button id="refresh-history" title="Refresh history">Refresh</button>
+      </div>
+      <div class="table-wrap">
+        <table id="history-table">
+          <thead>
+            <tr>
+              <th>Plate</th>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Color</th>
+              <th>Entry</th>
+              <th>Exit</th>
+              <th>Parked</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Parking Tracker</small>
+  </footer>
+
+  <script src="/app.js" defer></script>
+  <script>
+    // Basic theme preference for nicer look on first load
+    (function() {
+      const m = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (m) document.documentElement.classList.add('dark');
+    })();
+  </script>
+</body>
+<style>
+  /* Inline fallback if styles.css fails to load */
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; margin: 0; padding: 0; background: #0b0c10; color: #e5e7eb; }
+  header, footer { padding: 16px; background: #111827; border-bottom: 1px solid #1f2937; }
+  main { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+  .card { background: #111827; border: 1px solid #1f2937; border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+  .card-header { display: flex; align-items: center; justify-content: space-between; }
+  .grid { display: grid; grid-template-columns: repeat(4, minmax(160px, 1fr)); gap: 12px; }
+  label { display: grid; gap: 6px; font-size: 12px; color: #9ca3af; }
+  input { padding: 10px 12px; border-radius: 8px; border: 1px solid #374151; background: #0b0c10; color: #e5e7eb; }
+  button { padding: 10px 14px; border-radius: 8px; border: 1px solid #2563eb; background: #1d4ed8; color: white; cursor: pointer; }
+  button:hover { background: #1e40af; }
+  .table-wrap { overflow: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 10px 8px; border-bottom: 1px solid #1f2937; text-align: left; }
+  .status { margin-left: 12px; font-size: 12px; color: #9ca3af; }
+  .danger { background: #991b1b; border-color: #b91c1c; }
+  .danger:hover { background: #7f1d1d; }
+  @media (max-width: 800px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</html>
+
